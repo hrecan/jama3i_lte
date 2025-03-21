@@ -1,0 +1,565 @@
+/* Styles pour la page d'accueil */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(135deg, 
+        rgba(44, 62, 80, 0.95),
+        rgba(26, 188, 156, 0.85)
+    ), url('/assets/images/mosque.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: -60px;
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effet de superposition avec motif géométrique */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(44, 62, 80, 0.3) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(44, 62, 80, 0.3) 50%, 
+        rgba(44, 62, 80, 0.3) 75%, 
+        transparent 75%, 
+        transparent);
+    background-size: 100px 100px;
+    opacity: 0.1;
+    animation: backgroundMove 20s linear infinite;
+}
+
+@keyframes backgroundMove {
+    from { background-position: 0 0; }
+    to { background-position: 100px 100px; }
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    z-index: 1;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(120deg, #ffffff, #1abc9c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    animation: fadeInUp 1s ease-out 0.5s;
+    animation-fill-mode: both;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section des horaires de prière */
+.prayer-info-container {
+    background: #2c3e50;
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.location-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    font-size: 1.2em;
+}
+
+.city-info, .datetime-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.city-info i, .datetime-info i {
+    color: #1abc9c;
+}
+
+#city-name, #current-time, #current-date {
+    color: white;
+}
+
+.next-prayer-info {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(26, 188, 156, 0.1);
+    border-radius: 10px;
+}
+
+.next-prayer-info h2 {
+    color: #1abc9c;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.prayer-name {
+    font-size: 1.4em;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.prayer-time {
+    font-size: 1.8em;
+    color: #1abc9c;
+    font-weight: bold;
+}
+
+.time-remaining {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+.prayer-times-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.prayer-time-item {
+    flex: 1;
+    min-width: 120px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.prayer-time-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.prayer-time-item .prayer-name {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+
+.prayer-time-item .prayer-time {
+    font-size: 1.4em;
+}
+
+/* Section Google Maps */
+.mosque-section {
+    padding: 4% 0;
+    background-color: #f5f5f5;
+    width: 100%;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+.section-header h2 {
+    color: #2c3e50;
+    font-size: 2vw;
+}
+
+.mosque-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2%;
+}
+
+.map-container {
+    display: flex;
+    gap: 2%;
+    width: 100%;
+}
+
+#gmap {
+    flex: 2;
+    height: 50vh;
+    min-height: 300px;
+    border-radius: 1vw;
+    overflow: hidden;
+    box-shadow: 0 0.3vw 1vw rgba(0, 0, 0, 0.1);
+}
+
+#mosque-list {
+    flex: 1;
+    background: white;
+    padding: 2%;
+    border-radius: 1vw;
+    box-shadow: 0 0.3vw 1vw rgba(0, 0, 0, 0.1);
+    max-height: 50vh;
+    min-height: 300px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.mosque-item {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mosque-item h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.mosque-item p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.mosque-item .address {
+    color: #555;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+.mosque-item .distance {
+    color: #555;
+    font-weight: 500;
+    font-size: 0.9em;
+    margin-bottom: 12px;
+}
+
+.mosque-item .directions-button {
+
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+
+
+.mosque-item .directions-button i {
+    font-size: 1em;
+}
+
+.mosque-item:last-child {
+    border-bottom: none;
+}
+
+.mosque-item:hover {
+    background-color: #f8f9fa;
+}
+
+.mosque-name {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 1%;
+    font-size: 1vw;
+}
+
+.mosque-address {
+    font-size: 0.9vw;
+    color: #666;
+    margin-bottom: 1%;
+}
+
+.mosque-distance {
+    font-size: 0.8vw;
+    color: #1abc9c;
+}
+
+/* Reste des styles pour la page d'accueil */
+.features-section {
+    padding: 80px 20px;
+    background-color: #f8f9fa;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card i {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.feature-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.cta-section {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.cta-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #16a085;
+    transform: translateY(-2px);
+}
+
+.prayer-times-section {
+    padding: 80px 20px;
+    background-color: white;
+}
+
+.prayer-times-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.prayer-times-container h2 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+}
+
+.prayer-times-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.prayer-time-card {
+    background-color: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.prayer-time-card:hover {
+    transform: translateY(-3px);
+}
+
+.prayer-time-card h4 {
+    color: var(--primary-color);
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.prayer-time-card p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Styles responsifs */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 500px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+
+    .prayer-times-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-content h2 {
+        font-size: 2em;
+    }
+
+    .location-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .prayer-times-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .prayer-time-item {
+        width: 100%;
+    }
+
+    .map-container {
+        flex-direction: column;
+    }
+
+    #gmap, #mosque-list {
+        width: 100%;
+        height: 40vh;
+        min-height: 250px;
+    }
+
+    .mosque-name {
+        font-size: 2.5vw;
+    }
+
+    .mosque-address {
+        font-size: 2.2vw;
+    }
+
+    .mosque-distance {
+        font-size: 2vw;
+    }
+
+    .section-header h2 {
+        font-size: 4vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        height: 400px;
+    }
+
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .prayer-time-item {
+        flex: 1 1 100%;
+    }
+
+    .mosque-name {
+        font-size: 3.5vw;
+    }
+
+    .mosque-address {
+        font-size: 3.2vw;
+    }
+
+    .mosque-distance {
+        font-size: 3vw;
+    }
+
+    .section-header h2 {
+        font-size: 5vw;
+    }
+}

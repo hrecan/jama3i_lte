@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Accueil</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/components/header.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/components/footer.css">
+    <link rel="stylesheet" href="/css/components/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Configuration globale -->
+    <script src="/js/config.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Le header sera chargé ici -->
+        <div id="header-container"></div>
+
+    <main>
+            <!-- Bannière principale avec prière -->
+            <section class="hero-banner">
+                <div class="prayer-info-container">
+                    <div class="location-info">
+                        <div class="city-info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span id="city-name">Chargement...</span>
+                        </div>
+                        <div class="datetime-info">
+                            <i class="far fa-clock"></i>
+                            <span id="current-time">--:--</span>
+                            <i class="far fa-calendar-alt"></i>
+                            <span id="current-date">--/--/----</span>
+                        </div>
+                    </div>
+                    <div class="next-prayer-info">
+                        <h2>Prochaine prière</h2>
+                        <div class="prayer-name" id="next-prayer-name">Chargement...</div>
+                        <div class="prayer-time" id="next-prayer-time">--:--</div>
+                        <div class="time-remaining" id="time-remaining">Dans -- minutes</div>
+                    </div>
+                    <div class="prayer-times-row">
+                        <div class="prayer-time-item">
+                            <div class="prayer-name">Fajr</div>
+                            <div class="prayer-time" id="fajr-time">--:--</div>
+                        </div>
+                        <div class="prayer-time-item">
+                            <div class="prayer-name">Dhuhr</div>
+                            <div class="prayer-time" id="dhuhr-time">--:--</div>
+                        </div>
+                        <div class="prayer-time-item">
+                            <div class="prayer-name">Asr</div>
+                            <div class="prayer-time" id="asr-time">--:--</div>
+                        </div>
+                        <div class="prayer-time-item">
+                            <div class="prayer-name">Maghrib</div>
+                            <div class="prayer-time" id="maghrib-time">--:--</div>
+                        </div>
+                        <div class="prayer-time-item">
+                            <div class="prayer-name">Isha</div>
+                            <div class="prayer-time" id="isha-time">--:--</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Section mosquée proche -->
+            <section id="map-section" class="mosque-section">
+                <div class="section-header">
+                    <h2>Mosquées à proximité</h2>
+                </div>
+                <div class="mosque-content">
+                    <div class="map-container">
+                        <div id="gmap" class="map"></div>
+                        <div id="mosque-list" class="mosque-list"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        function initMap() {
+            if (window.mosqueFinder) {
+                console.log('MosqueFinder déjà initialisé');
+                return;
+            }
+            try {
+                window.mosqueFinder = new MosqueFinder();
+            } catch (error) {
+                console.error('Erreur lors de l\'initialisation de la carte:', error);
+            }
+        }
+    </script>
+    <script src="/js/home.js"></script>
+    <script src="/js/prayer-times.js"></script>
+    <script src="/js/nav.js"></script>
+    <script src="/js/header-loader.js"></script>
+    <script src="/js/footer-loader.js"></script>
+    <script src="/js/mosque-finder.js"></script>
+    <script src="/js/events-slider.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSMTbborfzElgcKx8NIiAaY-7qMsffp8s&libraries=places,geometry,marker&v=beta&callback=initMap">
+    </script>
+</body>
+</html>

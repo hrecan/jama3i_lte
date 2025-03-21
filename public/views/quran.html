@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jama3i - Coran</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/components/header.css">
+    <link rel="stylesheet" href="/css/quran.css">
+    <link rel="stylesheet" href="/css/components/forms.css">
+    <link rel="stylesheet" href="/css/components/footer.css">
+    <link rel="stylesheet" href="/css/components/modal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <!-- Configuration globale -->
+    <script src="/js/config.js"></script>
+</head>
+<body>
+    <div id="header-container"></div>
+    
+    <div id="quran-progress-container" class="quran-progress" style="display: none;">
+        <div class="progress-stats">
+            <div class="progress-stat">
+                <i class="fas fa-book-reader"></i>
+                <div class="stat-info">
+                    <span class="stat-label">Sourates complétées</span>
+                    <span class="stat-value" id="completed-surahs">0/114</span>
+                </div>
+            </div>
+            <div class="progress-stat">
+                <i class="fas fa-clock"></i>
+                <div class="stat-info">
+                    <span class="stat-label">Temps d'écoute</span>
+                    <span class="stat-value" id="listening-time">0h 0m</span>
+                </div>
+            </div>
+            <div class="progress-stat">
+                <i class="fas fa-bookmark"></i>
+                <div class="stat-info">
+                    <span class="stat-label">Versets favoris</span>
+                    <span class="stat-value" id="favorite-verses">0</span>
+                </div>
+            </div>
+        </div>
+        <div class="achievements">
+            <h3>Réalisations</h3>
+            <div class="badges">
+                <div class="badge" id="first-surah" title="Première sourate complétée">
+                    <div class="progress-ring">
+                        <div class="progress-ring-fill"></div>
+                    </div>
+                    <i class="fas fa-star"></i>
+                    <span>Première Sourate</span>
+                </div>
+                <div class="badge" id="ten-surahs" title="10 sourates complétées">
+                    <div class="progress-ring">
+                        <div class="progress-ring-fill"></div>
+                    </div>
+                    <i class="fas fa-certificate"></i>
+                    <span>10 Sourates</span>
+                </div>
+                <div class="badge" id="half-quran" title="La moitié du Coran complétée">
+                    <div class="progress-ring">
+                        <div class="progress-ring-fill"></div>
+                    </div>
+                    <i class="fas fa-medal"></i>
+                    <span>Moitié du Coran</span>
+                </div>
+                <div class="badge" id="complete-quran" title="Le Coran complet">
+                    <div class="progress-ring">
+                        <div class="progress-ring-fill"></div>
+                    </div>
+                    <i class="fas fa-trophy"></i>
+                    <span>Coran Complet</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="quran-container">
+        <div class="quran-sidebar">
+            <div class="search-box">
+                <input type="text" id="surahSearch" placeholder="Rechercher une sourate...">
+            </div>
+            <div id="surahList" class="surah-list">
+                <!-- Liste des sourates générée par JavaScript -->
+            </div>
+        </div>
+
+        <div class="quran-content">
+            <div class="controls">
+                <select id="reciter-select" class="reciter-select">
+                    <option value="">Sélectionner un récitateur</option>
+                </select>
+                <select id="translationSelect" class="translation-select">
+                    <option value="fr">Français</option>
+                    <option value="en">English</option>
+                </select>
+                <div class="audio-controls">
+                    <button id="playButton" class="control-button">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button id="stop" class="control-button">
+                        <i class="fas fa-stop"></i>
+                    </button>
+                    <div class="volume-control">
+                        <i class="fas fa-volume-up"></i>
+                        <input type="range" id="volume" min="0" max="100" value="100">
+                    </div>
+                    <div class="progress-container">
+                        <div id="progress" class="progress-bar">
+                            <div class="progress"></div>
+                        </div>
+                        <span id="time-display" class="time-display">00:00 / 00:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <h2 id="currentSurah">Sélectionnez une sourate</h2>
+                <div class="quran-verses">
+                    <!-- Le contenu des versets sera généré ici -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/header-loader.js"></script>
+    <script src="../js/quran.js"></script>
+</body>
+</html>

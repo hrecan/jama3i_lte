@@ -1,0 +1,26 @@
+{
+    "mosques": [
+        {
+            "id": 1,
+            "name": "Mosquée de Paris",
+            "address": "2 Place du Puits de l'Ermite, 75005 Paris",
+            "phone": "+33123456789",
+            "email": "contact@mosqueepaix.fr",
+            "latitude": 48.8566,
+            "longitude": 2.3522,
+            "capacity": 1000,
+            "courses_count": 5
+        },
+        {
+            "id": 2,
+            "name": "Mosquée de Lyon",
+            "address": "146 Boulevard Pinel, 69008 Lyon",
+            "phone": "+33987654321",
+            "email": "contact@grandemosquee.fr",
+            "latitude": 45.7640,
+            "longitude": 4.8357,
+            "capacity": 800,
+            "courses_count": 3
+        }
+    ]
+}

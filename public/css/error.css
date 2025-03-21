@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+.error-container {
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #d32f2f;
+    margin-bottom: 1rem;
+}
+
+p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+a {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Specific styles for 404 page */
+.error-404 h1 {
+    color: #f44336;
+}
+
+/* Specific styles for 500 page */
+.error-500 h1 {
+    color: #d32f2f;
+}

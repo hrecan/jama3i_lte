@@ -1,0 +1,48 @@
+/* Animations générales */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Application des animations */
+.hero-banner {
+    animation: fadeIn 1s ease-out;
+}
+
+.prayer-name, .countdown {
+    animation: pulse 2s infinite;
+}
+
+.section-header {
+    animation: slideIn 0.5s ease-out;
+}
+
+.mosque-details, .event-card, .course-card {
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Hover effects */
+.slider-btn:hover {
+    transform: scale(1.1);
+}
+
+.social-link:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.view-all:hover {
+    background: var(--primary-color);
+    color: white;
+} 

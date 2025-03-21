@@ -1,0 +1,63 @@
+/* Tablettes */
+@media (max-width: 1024px) {
+    .all-prayers {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .mosque-content {
+        grid-template-columns: 1fr;
+    }
+
+    .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .prayer-name {
+        font-size: 2rem;
+    }
+
+    .countdown {
+        font-size: 2.5rem;
+    }
+
+    .all-prayers {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+}
+
+/* Petits écrans */
+@media (max-width: 480px) {
+    .all-prayers {
+        grid-template-columns: 1fr;
+    }
+
+    .prayer-time {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+} 
