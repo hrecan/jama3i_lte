@@ -29,6 +29,8 @@ class MosqueFinder {
             console.log('Obtention de la position de l\'utilisateur...');
             await this.getUserLocation();
             
+            console.log('Position utilisateur:', this.userPosition);
+            
             console.log('Initialisation de la carte...');
             await this.initMap();
             
@@ -49,73 +51,73 @@ class MosqueFinder {
 
     async getUserLocation() {
         return new Promise((resolve, reject) => {
-            // Vérifier si nous sommes en HTTPS ou localhost
-            const isSecureContext = window.isSecureContext;
-            const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+            console.log('Début de la géolocalisation...');
+            console.log('Hostname:', window.location.hostname);
+            console.log('isSecureContext:', window.isSecureContext);
             
-            if (!isSecureContext && !isLocalhost) {
+            const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+            console.log('isLocalhost:', isLocalhost);
+            
+            if (!isLocalhost && !window.isSecureContext) {
                 console.warn('La géolocalisation nécessite HTTPS en production');
-                // Position par défaut (Paris)
-                this.userPosition = {
-                    lat: 48.8566,
-                    lng: 2.3522
-                };
+                this.userPosition = window.APP_CONFIG.DEFAULT_LOCATION;
                 resolve(this.userPosition);
                 return;
             }
 
-            if (navigator.geolocation) {
-                const options = {
-                    enableHighAccuracy: true,
-                    timeout: 10000,
-                    maximumAge: 0
-                };
-
-                navigator.geolocation.getCurrentPosition(
-                    (position) => {
-                        console.log('Position obtenue:', position);
-                        this.userPosition = {
-                            lat: position.coords.latitude,
-                            lng: position.coords.longitude
-                        };
-                        resolve(this.userPosition);
-                    },
-                    (error) => {
-                        console.warn('Erreur de géolocalisation:', error);
-                        let errorMessage = 'Erreur de géolocalisation: ';
-                        switch(error.code) {
-                            case error.PERMISSION_DENIED:
-                                errorMessage += 'L\'utilisateur a refusé la demande de géolocalisation.';
-                                break;
-                            case error.POSITION_UNAVAILABLE:
-                                errorMessage += 'L\'information de localisation n\'est pas disponible.';
-                                break;
-                            case error.TIMEOUT:
-                                errorMessage += 'La demande de géolocalisation a expiré.';
-                                break;
-                            default:
-                                errorMessage += 'Une erreur inconnue est survenue.';
-                        }
-                        console.warn(errorMessage);
-                        
-                        // Position par défaut (Paris)
-                        this.userPosition = {
-                            lat: 48.8566,
-                            lng: 2.3522
-                        };
-                        resolve(this.userPosition);
-                    },
-                    options
-                );
-            } else {
+            if (!navigator.geolocation) {
                 console.warn('Géolocalisation non supportée par ce navigateur');
-                // Position par défaut (Paris)
-                this.userPosition = {
-                    lat: 48.8566,
-                    lng: 2.3522
-                };
+                this.userPosition = window.APP_CONFIG.DEFAULT_LOCATION;
                 resolve(this.userPosition);
+                return;
             }
+
+            const options = {
+                enableHighAccuracy: true,
+                timeout: 10000,
+                maximumAge: 0
+            };
+
+            console.log('Demande de la position...');
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    console.log('Position obtenue avec succès:', position);
+                    this.userPosition = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+                    resolve(this.userPosition);
+                },
+                (error) => {
+                    console.warn('Erreur détaillée de géolocalisation:', {
+                        code: error.code,
+                        message: error.message,
+                        PERMISSION_DENIED: error.PERMISSION_DENIED,
+                        POSITION_UNAVAILABLE: error.POSITION_UNAVAILABLE,
+                        TIMEOUT: error.TIMEOUT
+                    });
+
+                    let errorMessage = 'Erreur de géolocalisation: ';
+                    switch(error.code) {
+                        case error.PERMISSION_DENIED:
+                            errorMessage += 'L\'utilisateur a refusé la demande de géolocalisation.';
+                            break;
+                        case error.POSITION_UNAVAILABLE:
+                            errorMessage += 'L\'information de localisation n\'est pas disponible.';
+                            break;
+                        case error.TIMEOUT:
+                            errorMessage += 'La demande de géolocalisation a expiré.';
+                            break;
+                        default:
+                            errorMessage += 'Une erreur inconnue est survenue.';
+                    }
+                    console.warn(errorMessage);
+                    
+                    this.userPosition = window.APP_CONFIG.DEFAULT_LOCATION;
+                    resolve(this.userPosition);
+                },
+                options
+            );
         });
     }
 

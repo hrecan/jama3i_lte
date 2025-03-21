@@ -90,6 +90,15 @@
                 console.error('Erreur lors de l\'initialisation de la carte:', error);
             }
         }
+
+        // Charger l'API Google Maps avec la clé depuis la configuration
+        function loadGoogleMapsScript() {
+            const script = document.createElement('script');
+            script.src = `https://maps.googleapis.com/maps/api/js?key=${window.APP_CONFIG.GOOGLE_MAPS_KEY}&libraries=places,geometry,marker&v=beta&callback=initMap`;
+            script.async = true;
+            script.defer = true;
+            document.body.appendChild(script);
+        }
     </script>
     <script src="/js/home.js"></script>
     <script src="/js/prayer-times.js"></script>
@@ -98,19 +107,10 @@
     <script src="/js/footer-loader.js"></script>
     <script src="/js/mosque-finder.js"></script>
     <script src="/js/events-slider.js"></script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=GOOGLE_MAPS_KEY&libraries=places,geometry,marker&v=beta&callback=initMap">
-    </script>
-
     <script>
-        // Remplacer la clé Google Maps par celle de la configuration
+        // Charger Google Maps une fois que la configuration est chargée
         document.addEventListener('DOMContentLoaded', function() {
-            const scripts = document.getElementsByTagName('script');
-            for (let script of scripts) {
-                if (script.src && script.src.includes('maps.googleapis.com')) {
-                    script.src = script.src.replace('GOOGLE_MAPS_KEY', window.APP_CONFIG.GOOGLE_MAPS_KEY);
-                }
-            }
+            loadGoogleMapsScript();
         });
     </script>
 </body>
