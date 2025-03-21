@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Accueil</title>
+    <title>Accueil</title>
     <!-- Styles -->
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/home.css">
@@ -18,7 +18,7 @@
         <!-- Le header sera chargé ici -->
         <div id="header-container"></div>
 
-    <main>
+        <main>
             <!-- Bannière principale avec prière -->
             <section class="hero-banner">
                 <div class="prayer-info-container">
@@ -65,22 +65,18 @@
                 </div>
             </section>
 
-
-            <!-- Section mosquée proche -->
-            <section id="map-section" class="mosque-section">
-                <div class="section-header">
-                    <h2>Mosquées à proximité</h2>
-                </div>
-                <div class="mosque-content">
-                    <div class="map-container">
-                        <div id="gmap" class="map"></div>
-                        <div id="mosque-list" class="mosque-list"></div>
-                    </div>
+            <!-- Section des mosquées -->
+            <section class="mosques-section">
+                <h2>Mosquées à proximité</h2>
+                <div class="mosques-container">
+                    <div id="gmap" class="map-container"></div>
+                    <div id="mosque-list" class="mosque-list"></div>
                 </div>
             </section>
         </main>
 
-    <div id="footer-placeholder"></div>
+        <div id="footer-placeholder"></div>
+    </div>
 
     <script>
         function initMap() {
@@ -103,7 +99,19 @@
     <script src="/js/mosque-finder.js"></script>
     <script src="/js/events-slider.js"></script>
     <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSMTbborfzElgcKx8NIiAaY-7qMsffp8s&libraries=places,geometry,marker&v=beta&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=GOOGLE_MAPS_KEY&libraries=places,geometry,marker&v=beta&callback=initMap">
+    </script>
+
+    <script>
+        // Remplacer la clé Google Maps par celle de la configuration
+        document.addEventListener('DOMContentLoaded', function() {
+            const scripts = document.getElementsByTagName('script');
+            for (let script of scripts) {
+                if (script.src && script.src.includes('maps.googleapis.com')) {
+                    script.src = script.src.replace('GOOGLE_MAPS_KEY', window.APP_CONFIG.GOOGLE_MAPS_KEY);
+                }
+            }
+        });
     </script>
 </body>
 </html>

@@ -36,7 +36,7 @@ class MosqueFinder {
             this.directionsService = new google.maps.DirectionsService();
             this.directionsRenderer = new google.maps.DirectionsRenderer({
                 map: this.map,
-                suppressMarkers: true // Ne pas afficher les marqueurs A et B par défaut
+                suppressMarkers: true
             });
             
             console.log('Recherche des mosquées...');
@@ -49,9 +49,31 @@ class MosqueFinder {
 
     async getUserLocation() {
         return new Promise((resolve, reject) => {
+            // Vérifier si nous sommes en HTTPS ou localhost
+            const isSecureContext = window.isSecureContext;
+            const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+            
+            if (!isSecureContext && !isLocalhost) {
+                console.warn('La géolocalisation nécessite HTTPS en production');
+                // Position par défaut (Paris)
+                this.userPosition = {
+                    lat: 48.8566,
+                    lng: 2.3522
+                };
+                resolve(this.userPosition);
+                return;
+            }
+
             if (navigator.geolocation) {
+                const options = {
+                    enableHighAccuracy: true,
+                    timeout: 10000,
+                    maximumAge: 0
+                };
+
                 navigator.geolocation.getCurrentPosition(
                     (position) => {
+                        console.log('Position obtenue:', position);
                         this.userPosition = {
                             lat: position.coords.latitude,
                             lng: position.coords.longitude
@@ -60,16 +82,33 @@ class MosqueFinder {
                     },
                     (error) => {
                         console.warn('Erreur de géolocalisation:', error);
+                        let errorMessage = 'Erreur de géolocalisation: ';
+                        switch(error.code) {
+                            case error.PERMISSION_DENIED:
+                                errorMessage += 'L\'utilisateur a refusé la demande de géolocalisation.';
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                errorMessage += 'L\'information de localisation n\'est pas disponible.';
+                                break;
+                            case error.TIMEOUT:
+                                errorMessage += 'La demande de géolocalisation a expiré.';
+                                break;
+                            default:
+                                errorMessage += 'Une erreur inconnue est survenue.';
+                        }
+                        console.warn(errorMessage);
+                        
                         // Position par défaut (Paris)
                         this.userPosition = {
                             lat: 48.8566,
                             lng: 2.3522
                         };
                         resolve(this.userPosition);
-                    }
+                    },
+                    options
                 );
             } else {
-                console.warn('Géolocalisation non supportée');
+                console.warn('Géolocalisation non supportée par ce navigateur');
                 // Position par défaut (Paris)
                 this.userPosition = {
                     lat: 48.8566,
