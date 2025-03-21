@@ -1,38 +1,21 @@
 {
   "name": "jama3i",
   "version": "1.0.0",
+  "description": "Application de gestion de mosquées et de lecture du Coran",
+  "main": "server/server.js",
   "scripts": {
-    "start": "cd server && npm start",
-    "dev": "cd server && npm run dev",
-    "install-server": "cd server && npm install",
-    "electron-dev": "electron .",
-    "electron-build": "electron-builder build --win",
-    "build": "npm run electron-build"
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js"
   },
-  "main": "electron.js",
-  "build": {
-    "appId": "com.jama3i.app",
-    "productName": "JAMA3I",
-    "directories": {
-      "output": "dist"
-    },
-    "win": {
-      "target": ["nsis"],
-      "icon": "public/assets/icon.ico"
-    }
-  },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "@capacitor/android": "^7.0.1",
-    "@capacitor/cli": "^7.0.1",
-    "@capacitor/core": "^7.0.1",
-    "@capacitor/ios": "^7.0.1"
+    "express": "^4.18.2"
   },
   "devDependencies": {
-    "electron": "latest",
-    "electron-builder": "latest"
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
