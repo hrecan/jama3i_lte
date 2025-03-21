@@ -51,8 +51,6 @@ class QuranPlayer {
         // Initialize UI elements
         this.init();
         this.togglePlay = this.togglePlay.bind(this);
-        
-        this.checkAuthenticationStatus();
     }
 
     async init() {
@@ -597,124 +595,14 @@ class QuranPlayer {
     }
 
     loadUserProgress() {
-        const token = localStorage.getItem('token');
-        if (!token) return;
-
-        // Charger les progrès de l'utilisateur depuis le serveur
-        fetch(`${this.apiBaseUrl}/ghtushi`, {
-            headers: {
-                'Authorization': `Bearer ${token}`,
-                'Accept': 'application/json'
-            },
-            credentials: 'include'
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Erreur HTTP: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data.success && data.stats) {
-                const progress = {
-                    completedSurahs: data.stats.completed_surah_ids || [],
-                    totalListeningTime: data.stats.total_listening_time || '00:00:00',
-                    hasCompletedSurahs: data.stats.has_completed_surahs || false
-                };
-                
-                this.updateProgress(progress);
-            }
-        })
-        .catch(error => {
-            console.error('Erreur lors du chargement des progrès:', error);
-            this.updateProgress({
-                completedSurahs: [],
-                totalListeningTime: '00:00:00',
-                hasCompletedSurahs: false
-            });
-        });
-    }
-
-    async saveListeningHistory(isCompleted) {
-        const token = localStorage.getItem('token');
-        if (!token) {
-            console.log('Pas de token trouvé, impossible d\'enregistrer l\'historique');
-            return;
-        }
-
-        const totalTimeInMinutes = Math.round(this.listeningSession.elapsedTime / 60);
+        // Charger les progrès de l'utilisateur depuis le localStorage
+        const progress = JSON.parse(localStorage.getItem('quranProgress')) || {
+            completedSurahs: [],
+            listeningTime: 0,
+            favoriteVerses: []
+        };
         
-        try {
-            console.log('Envoi des données:', {
-                id_sourat: this.currentSurah,
-                temps_ecoute: `00:${String(totalTimeInMinutes).padStart(2, '0')}:00`,
-                finich: isCompleted
-            });
-
-            const response = await fetch(`${this.apiBaseUrl}/ghtushi`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`,
-                    'Accept': 'application/json'
-                },
-                credentials: 'include',
-                body: JSON.stringify({
-                    id_sourat: this.currentSurah,
-                    temps_ecoute: `00:${String(totalTimeInMinutes).padStart(2, '0')}:00`,
-                    finich: isCompleted
-                })
-            });
-
-            if (!response.ok) {
-                const errorData = await response.json().catch(() => ({}));
-                console.error('Réponse serveur:', {
-                    status: response.status,
-                    statusText: response.statusText,
-                    error: errorData
-                });
-                throw new Error(errorData.message || `Erreur HTTP: ${response.status}`);
-            }
-
-            const data = await response.json();
-            console.log('Historique enregistré avec succès:', data);
-            this.loadUserProgress();
-            this.resetListeningSession();
-        } catch (error) {
-            console.error('Erreur détaillée:', {
-                message: error.message,
-                currentSurah: this.currentSurah,
-                elapsedTime: this.listeningSession.elapsedTime
-            });
-        }
-    }
-
-    loadListeningStats() {
-        const token = localStorage.getItem('token');
-        if (!token) return;
-
-        // Charger les statistiques de l'utilisateur depuis le serveur
-        fetch(`${this.apiBaseUrl}/ghtushi`, {
-            headers: {
-                'Authorization': `Bearer ${token}`,
-                'Accept': 'application/json'
-            },
-            credentials: 'include'
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Erreur HTTP: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data.success && data.stats) {
-                this.updateStatsDisplay(data.stats);
-            }
-        })
-        .catch(error => {
-            console.error('Erreur lors du chargement des statistiques:', error);
-        });
+        this.updateProgress(progress);
     }
 
     updateStatsDisplay(stats) {
@@ -794,21 +682,6 @@ class QuranPlayer {
         const hours = Math.floor(seconds / 3600);
         const minutes = Math.floor((seconds % 3600) / 60);
         return `${hours}h ${minutes}m`;
-    }
-
-    checkAuthenticationStatus() {
-        // Vérifier si un token existe dans le localStorage
-        const token = localStorage.getItem('token');
-        const progressContainer = document.getElementById('quran-progress-container');
-        
-        if (token) {
-            // Utilisateur connecté
-            progressContainer.style.display = 'block';
-            this.loadUserProgress();
-        } else {
-            // Utilisateur non connecté
-            progressContainer.style.display = 'none';
-        }
     }
 
     startListeningSession() {

@@ -1,24 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const dataManager = require('../utils/dataManager');
-const { authenticateToken } = require('../middleware/auth');
-
-// Middleware d'authentification conditionnel (désactivé en développement)
-const conditionalAuth = (req, res, next) => {
-    if (process.env.NODE_ENV === 'development') {
-        // En développement, simuler un utilisateur connecté
-        req.user = { id: 1 }; // Utilisateur de test
-        next();
-    } else {
-        authenticateToken(req, res, next);
-    }
-};
 
 // Route pour enregistrer l'historique d'écoute
-router.post('/ghtushi', conditionalAuth, async (req, res) => {
+router.post('/ghtushi', async (req, res) => {
     try {
         const { id_sourat, temps_ecoute, finich } = req.body;
-        const id_user = req.user.id;
+        const id_user = 1; // Utilisateur de test
 
         console.log('Données reçues:', { id_user, id_sourat, temps_ecoute, finich });
 
@@ -47,9 +35,9 @@ router.post('/ghtushi', conditionalAuth, async (req, res) => {
 });
 
 // Route pour obtenir les statistiques d'écoute
-router.get('/ghtushi', conditionalAuth, async (req, res) => {
+router.get('/ghtushi', async (req, res) => {
     try {
-        const id_user = req.user.id;
+        const id_user = 1; // Utilisateur de test
 
         const progress = await dataManager.query('quran.json', 'user_progress', 
             item => item.id_user === id_user
