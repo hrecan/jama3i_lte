@@ -461,7 +461,111 @@
     color: #666;
 }
 
-/* Styles responsifs */
+/* Media Queries pour la responsivité */
+@media screen and (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
+    .prayer-info-container {
+        padding: 15px;
+        margin: 10px;
+        border-radius: 10px;
+    }
+
+    .location-info {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .prayer-times-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .prayer-time-item {
+        min-width: 100%;
+    }
+
+    .next-prayer-info {
+        padding: 15px;
+    }
+
+    .next-prayer-info h2 {
+        font-size: 1.5em;
+    }
+
+    .prayer-name {
+        font-size: 1.2em;
+    }
+
+    .prayer-time {
+        font-size: 1.4em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .prayer-info-container {
+        padding: 10px;
+    }
+
+    .city-info, .datetime-info {
+        font-size: 1em;
+    }
+
+    .next-prayer-info h2 {
+        font-size: 1.3em;
+    }
+
+    .prayer-time {
+        font-size: 1.2em;
+    }
+
+    .time-remaining {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mosques-section {
+        padding: 20px 10px;
+    }
+
+    .mosques-container {
+        flex-direction: column;
+    }
+
+    .map-container {
+        height: 300px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .mosque-list {
+        width: 100%;
+        max-height: 400px;
+        overflow-y: auto;
+    }
+
+    .mosque-item {
+        padding: 10px;
+    }
+}
+
 @media (max-width: 768px) {
     .hero-section {
         height: 500px;

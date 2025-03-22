@@ -19,65 +19,6 @@
 </head>
 <body>
     <div id="header-container"></div>
-    
-    <div id="quran-progress-container" class="quran-progress" style="display: none;">
-        <div class="progress-stats">
-            <div class="progress-stat">
-                <i class="fas fa-book-reader"></i>
-                <div class="stat-info">
-                    <span class="stat-label">Sourates complétées</span>
-                    <span class="stat-value" id="completed-surahs">0/114</span>
-                </div>
-            </div>
-            <div class="progress-stat">
-                <i class="fas fa-clock"></i>
-                <div class="stat-info">
-                    <span class="stat-label">Temps d'écoute</span>
-                    <span class="stat-value" id="listening-time">0h 0m</span>
-                </div>
-            </div>
-            <div class="progress-stat">
-                <i class="fas fa-bookmark"></i>
-                <div class="stat-info">
-                    <span class="stat-label">Versets favoris</span>
-                    <span class="stat-value" id="favorite-verses">0</span>
-                </div>
-            </div>
-        </div>
-        <div class="achievements">
-            <h3>Réalisations</h3>
-            <div class="badges">
-                <div class="badge" id="first-surah" title="Première sourate complétée">
-                    <div class="progress-ring">
-                        <div class="progress-ring-fill"></div>
-                    </div>
-                    <i class="fas fa-star"></i>
-                    <span>Première Sourate</span>
-                </div>
-                <div class="badge" id="ten-surahs" title="10 sourates complétées">
-                    <div class="progress-ring">
-                        <div class="progress-ring-fill"></div>
-                    </div>
-                    <i class="fas fa-certificate"></i>
-                    <span>10 Sourates</span>
-                </div>
-                <div class="badge" id="half-quran" title="La moitié du Coran complétée">
-                    <div class="progress-ring">
-                        <div class="progress-ring-fill"></div>
-                    </div>
-                    <i class="fas fa-medal"></i>
-                    <span>Moitié du Coran</span>
-                </div>
-                <div class="badge" id="complete-quran" title="Le Coran complet">
-                    <div class="progress-ring">
-                        <div class="progress-ring-fill"></div>
-                    </div>
-                    <i class="fas fa-trophy"></i>
-                    <span>Coran Complet</span>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <main class="quran-container">
         <div class="quran-sidebar">
@@ -117,14 +58,17 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="content">
                 <h2 id="currentSurah">Sélectionnez une sourate</h2>
-                <div class="quran-verses">
-                    <!-- Le contenu des versets sera généré ici -->
-                </div>
+
+            </div>
+
+            <div class="quran-verses">
+                <!-- Le contenu des versets sera généré ici -->
             </div>
         </div>
+       
     </main>
 
     <script src="../js/header-loader.js"></script>

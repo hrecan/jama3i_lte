@@ -431,9 +431,6 @@ class QuranPlayer {
                 this.stopProgressUpdate();
                 this.updateProgressBar(0);
                 
-                // Sauvegarder l'historique d'écoute
-                this.saveListeningHistory(true);
-                
                 if (this.autoPlay) {
                     this.playNextSurah();
                 }
@@ -463,6 +460,16 @@ class QuranPlayer {
                 // Mettre à jour l'affichage du temps
                 if (this.timeDisplay) {
                     this.timeDisplay.textContent = `${this.formatTime(seek)} / ${this.formatTime(duration)}`;
+                }
+
+                // Calculer l'ayah actuelle en fonction du temps écoulé
+                const ayahDuration = duration / this.ayahs.length;
+                const currentAyah = Math.floor(seek / ayahDuration);
+                
+                // Si l'ayah a changé, mettre à jour la surbrillance
+                if (currentAyah !== this.currentAyah) {
+                    this.currentAyah = currentAyah;
+                    this.highlightCurrentAyah();
                 }
             }
         }, 100); // Mise à jour toutes les 100ms
@@ -507,9 +514,6 @@ class QuranPlayer {
                     this.playButton.innerHTML = '<i class="fas fa-play"></i>';
                 }
                 const duration = this.stopListeningSession();
-                if (duration > 0) {
-                    this.saveListeningHistory(false);
-                }
             } else {
                 console.log('Starting audio');
                 this.sound.play();
