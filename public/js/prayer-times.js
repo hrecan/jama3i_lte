@@ -17,18 +17,42 @@ function updateDateTime() {
 // Fonction pour obtenir la position de l'utilisateur
 function getLocation() {
     if (navigator.geolocation) {
-        // Options de géolocalisation pour plus de précision
+        // Options de géolocalisation optimisées pour Safari
         const options = {
             enableHighAccuracy: true,
-            timeout: 10000,
-            maximumAge: 0
+            timeout: 20000, // Augmenté pour Safari
+            maximumAge: 30000 // Cache valide pendant 30 secondes
         };
         
-        // Tentative de géolocalisation
-        navigator.geolocation.getCurrentPosition(showPosition, showError, options);
+        // Vérifier si nous sommes sur HTTPS
+        if (window.location.protocol !== 'https:' && !window.location.hostname.includes('localhost')) {
+            console.warn("La géolocalisation nécessite HTTPS pour fonctionner sur Safari");
+            showManualLocationInput();
+            return;
+        }
         
-        // Afficher un message de chargement
-        document.getElementById("city-name").innerHTML = "Recherche de votre position...";
+        // Tentative de géolocalisation avec gestion spécifique pour Safari
+        try {
+            navigator.geolocation.getCurrentPosition(
+                showPosition,
+                (error) => {
+                    // Gestion spéciale pour Safari
+                    if (error.code === 1 && /^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
+                        console.warn("Erreur Safari : Permissions de géolocalisation");
+                        document.getElementById("city-name").innerHTML = "Veuillez autoriser l'accès à votre position dans les paramètres Safari";
+                    } else {
+                        showError(error);
+                    }
+                },
+                options
+            );
+            
+            // Afficher un message de chargement
+            document.getElementById("city-name").innerHTML = "Recherche de votre position...";
+        } catch (e) {
+            console.error("Erreur lors de l'accès à la géolocalisation:", e);
+            showManualLocationInput();
+        }
     } else {
         showManualLocationInput();
     }
@@ -93,6 +117,7 @@ async function showPosition(position) {
         getPrayerTimes(position.coords.latitude, position.coords.longitude);
     } catch (error) {
         console.error("Erreur lors de la récupération de la ville:", error);
+        
         // Essayer d'utiliser la dernière position connue
         const lastLocation = localStorage.getItem('lastKnownLocation');
         if (lastLocation) {
@@ -114,18 +139,18 @@ function showError(error) {
     let message = "";
     switch(error.code) {
         case error.PERMISSION_DENIED:
-            message = "Accès à la localisation refusé";
+            message = "Accès à la localisation refusé. Vérifiez les paramètres de votre navigateur.";
             break;
         case error.POSITION_UNAVAILABLE:
-            message = "Position non disponible";
+            message = "Position non disponible. Vérifiez que la localisation est activée.";
             break;
         case error.TIMEOUT:
-            message = "Délai d'attente dépassé";
+            message = "Délai d'attente dépassé. Veuillez réessayer.";
             break;
         default:
-            message = "Erreur inconnue";
+            message = "Erreur inconnue. Veuillez réessayer.";
     }
-    console.error("Erreur de géolocalisation:", message);
+    console.error("Erreur de géolocalisation:", message, error);
     
     // Essayer d'utiliser la dernière position connue
     const lastLocation = localStorage.getItem('lastKnownLocation');
