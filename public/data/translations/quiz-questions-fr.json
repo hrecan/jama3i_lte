@@ -1,0 +1,719 @@
+{
+    "questions": [
+        {
+            "question": "Combien de piliers y a-t-il en Islam ?",
+            "answers": [
+                "Sept",
+                "Quatre",
+                "Six",
+                "Cinq"
+            ],
+            "correct": 2,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quel est le premier pilier de l'Islam ?",
+            "answers": [
+                "Le jeûne (Sawn)",
+                "La Zakat",
+                "La Chahada (attestation de foi)",
+                "La prière (Salat)"
+            ],
+            "correct": 2,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quel ange a révélé le Coran au Prophète Muhammad ﷺ ?",
+            "answers": [
+                "L'ange Israfil",
+                "L'ange Jibril (Gabriel)",
+                "L'ange Malik",
+                "L'ange Mikael"
+            ],
+            "correct": 1,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quelle est la première sourate du Coran ?",
+            "answers": [
+                "An-Nas",
+                "Al-Ikhlas",
+                "Al-Fatiha",
+                "Al-Baqara"
+            ],
+            "correct": 2,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Combien de sourates y a-t-il dans le Coran ?",
+            "answers": [
+                "116",
+                "110",
+                "112",
+                "114"
+            ],
+            "correct": 3,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quel est le dernier Prophète en Islam ?",
+            "answers": [
+                "Ibrahim (Abraham)",
+                "Mouhammad ﷺ",
+                "Issa (Jésus)",
+                "Moussa (Moïse)"
+            ],
+            "correct": 1,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quel est le premier Prophète en Islam selon la tradition islamique ?",
+            "answers": [
+                "Idris",
+                "Ibrahim (Abraham)",
+                "Adam",
+                "Nouh (Noé)"
+            ],
+            "correct": 2,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quel est le mois du jeûne obligatoire en Islam ?",
+            "answers": [
+                "Chaabane",
+                "Ramadan",
+                "Mouharram",
+                "Rajab"
+            ],
+            "correct": 1,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Combien de Rakats comporte la prière du Fajr ?",
+            "answers": [
+                "Quatre",
+                "Cinq",
+                "Deux",
+                "Trois"
+            ],
+            "correct": 2,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quel est le deuxième pilier de l'Islam ?",
+            "answers": [
+                "La prière (Salat)",
+                "Le jeûne (Sawn)",
+                "La Zakat",
+                "Le Hajj"
+            ],
+            "correct": 0,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quelle sourate du Coran est connue sous le nom de 'la mère du livre' ?",
+            "answers": [
+                "Al-Fatiha",
+                "Al-Baqara",
+                "Yasin",
+                "Al-Ikhlas"
+            ],
+            "correct": 0,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quel est le pilier de l'Islam qui concerne la charité ?",
+            "answers": [
+                "La Zakat",
+                "Le Hajj",
+                "La Salat",
+                "Le Sawn"
+            ],
+            "correct": 0,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quel est le cinquième pilier de l'Islam ?",
+            "answers": [
+                "Le Hajj (pèlerinage à la Mecque)",
+                "La Zakat",
+                "Le jeûne",
+                "La prière"
+            ],
+            "correct": 0,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quelle est la langue originale du Coran ?",
+            "answers": [
+                "L'arabe",
+                "L'hébreu",
+                "Le syriaque",
+                "Le latin"
+            ],
+            "correct": 0,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quel hadith est considéré comme le fondement de la Sunna ?",
+            "answers": [
+                "Hadith du Jibril",
+                "Hadith des actions",
+                "Hadith de la miséricorde",
+                "Hadith du jeûne"
+            ],
+            "correct": 0,
+            "difficulty": "Moyen"
+        },
+        {
+            "question": "Qui est le compagnon du Prophète connu pour avoir compilé le Coran ?",
+            "answers": [
+                "Zayd ibn Thabit",
+                "Abou Bakr",
+                "Omar ibn Al-Khattab",
+                "Othman ibn Affan"
+            ],
+            "correct": 0,
+            "difficulty": "Moyen"
+        },
+        {
+            "question": "Quel événement marque le début de l'ère islamique ?",
+            "answers": [
+                "L'Hégire (migration vers Médine)",
+                "La révélation du Coran",
+                "La conquête de La Mecque",
+                "La bataille de Badr"
+            ],
+            "correct": 0,
+            "difficulty": "Moyen"
+        },
+        {
+            "question": "Quel est le terme désignant l'ensemble des paroles et actions du Prophète ?",
+            "answers": [
+                "Sunnah",
+                "Fiqh",
+                "Hadith",
+                "Tafsir"
+            ],
+            "correct": 0,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Dans quelle ville le Prophète Muhammad ﷺ a-t-il établi la première communauté musulmane ?",
+            "answers": [
+                "Médine",
+                "La Mecque",
+                "Taïf",
+                "Jérusalem"
+            ],
+            "correct": 0,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quel est le nom de la prière rituelle en Islam ?",
+            "answers": [
+                "Salat",
+                "Doua",
+                "Dhikr",
+                "Wird"
+            ],
+            "correct": 0,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quel jour de la semaine est considéré comme sacré en Islam ?",
+            "answers": [
+                "Le vendredi",
+                "Le samedi",
+                "Le dimanche",
+                "Le jeudi"
+            ],
+            "correct": 0,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quel terme désigne l'ensemble des jurisprudences islamiques ?",
+            "answers": [
+                "Fiqh",
+                "Tafsir",
+                "Hadith",
+                "Sunnah"
+            ],
+            "correct": 0,
+            "difficulty": "Moyen"
+        },
+        {
+            "question": "Quel est le nom du recueil de hadiths authentiques compilé par Sahih al-Bukhari ?",
+            "answers": [
+                "Sahih al-Bukhari",
+                "Sahih Muslim",
+                "Sunan Abu Dawood",
+                "Jami at-Tirmidhi"
+            ],
+            "correct": 0,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quel recueil de hadiths est considéré comme le deuxième le plus authentique après Sahih al-Bukhari ?",
+            "answers": [
+                "Sahih Muslim",
+                "Sunan Abu Dawood",
+                "Jami at-Tirmidhi",
+                "Sunan an-Nasa'i"
+            ],
+            "correct": 0,
+            "difficulty": "Moyen"
+        },
+        {
+            "question": "Quel est le nom de la bataille où les musulmans ont remporté une victoire significative contre les Mecquois ?",
+            "answers": [
+                "La bataille de Badr",
+                "La bataille d'Ouhud",
+                "La bataille du Fossé",
+                "La bataille de Khaybar"
+            ],
+            "correct": 0,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quel est le nom de la ville sainte de l'Islam où se trouve la Mosquée Al-Haram ?",
+            "answers": [
+                "La Mecque",
+                "Médine",
+                "Jérusalem",
+                "Le Caire"
+            ],
+            "correct": 0,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quel est le nom de la mosquée dans laquelle se trouve la Kaaba ?",
+            "answers": [
+                "La Mosquée Al-Haram",
+                "La Mosquée du Prophète",
+                "La Mosquée Al-Aqsa",
+                "La Mosquée de Kufa"
+            ],
+            "correct": 0,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quel est le nom de la prière de nuit effectuée pendant le Ramadan ?",
+            "answers": [
+                "Tarawih",
+                "Tahajjud",
+                "Witr",
+                "Qiyam"
+            ],
+            "correct": 0,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Dans quelle sourate trouve-t-on le verset 255, connu sous le nom d'Ayatul Kursi ?",
+            "answers": [
+                "Al-Baqara",
+                "Al-Imran",
+                "An-Nisa",
+                "Al-Maida"
+            ],
+            "correct": 0,
+            "difficulty": "Moyen"
+        },
+        {
+            "question": "Quel est l'événement commémoré lors de l'Achoura en Islam ?",
+            "answers": [
+                "Le martyre de l'Imam Hussein",
+                "La victoire de Badr",
+                "L'Hégire",
+                "La révélation du Coran"
+            ],
+            "correct": 0,
+            "difficulty": "Moyen"
+        },
+        {
+            "question": "Quel est le terme pour désigner la communauté des croyants en Islam ?",
+            "answers": [
+                "Oummah",
+                "Jamaa",
+                "Qawm",
+                "Sha'b"
+            ],
+            "correct": 0,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quel est le nom de l'ange chargé de noter les actions des êtres humains ?",
+            "answers": [
+                "Kiraman Katibin",
+                "Jibril",
+                "Mikael",
+                "Israfil"
+            ],
+            "correct": 0,
+            "difficulty": "Moyen"
+        },
+        {
+            "question": "Quel événement marque la révélation du Coran au Prophète Muhammad ﷺ ?",
+            "answers": [
+                "La première révélation dans la grotte de Hira",
+                "L'Hégire",
+                "La bataille de Badr",
+                "La conquête de La Mecque"
+            ],
+            "correct": 0,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quel est le terme utilisé pour désigner l'interprétation du Coran ?",
+            "answers": [
+                "Tafsir",
+                "Fiqh",
+                "Hadith",
+                "Sounnah"
+            ],
+            "correct": 0,
+            "difficulty": "Moyen"
+        },
+        {
+            "question": "Quel est le nom de la sourate la plus longue du Coran ?",
+            "answers": [
+                "Al-Baqara",
+                "Al-Imran",
+                "An-Nisa",
+                "Al-Maida"
+            ],
+            "correct": 0,
+            "difficulty": "Moyen"
+        },
+        {
+            "question": "Quel est le terme désignant les invocations et prières personnelles en Islam ?",
+            "answers": [
+                "Dua",
+                "Dhikr",
+                "Wird",
+                "Salat"
+            ],
+            "correct": 0,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quel recueil de hadiths est compilé par l'imam Tirmidhi ?",
+            "answers": [
+                "Jami' at-Tirmidhi",
+                "Sahih al-Boukhari",
+                "Sahih Mouslim",
+                "Sounan Abou Dawood"
+            ],
+            "correct": 0,
+            "difficulty": "Moyen"
+        },
+        {
+            "question": "Quel terme désigne la purification rituelle avant la prière ?",
+            "answers": [
+                "Woudou",
+                "Ghousl",
+                "Tayammoum",
+                "Istinja"
+            ],
+            "correct": 0,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quelle fête marque la fin du Ramadan ?",
+            "answers": [
+                "L'Aïd al-Fitr",
+                "L'Aïd al-Adha",
+                "L'Achoura",
+                "Le Mawlid"
+            ],
+            "correct": 0,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quelle fête importante est célébrée à la fin du Hajj ?",
+            "answers": [
+                "L'Aïd al-Adha",
+                "L'Aïd al-Fitr",
+                "L'Achoura",
+                "Le Mawlid"
+            ],
+            "correct": 0,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quel est le terme désignant ce qui est permis en Islam ?",
+            "answers": [
+                "Halal",
+                "Haram",
+                "Makrouh",
+                "Moubah"
+            ],
+            "correct": 0,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quel est le nom du premier calife après le décès du Prophète ﷺ ?",
+            "answers": [
+                "Ali ibn Abi Talib",
+                "Othman ibn Affan",
+                "Abou Bakr",
+                "Omar ibn Al-Khattab"
+            ],
+            "correct": 2,
+            "difficulty": "Facile"
+        },
+        {
+            "question": "Quel est le nombre de sourates révélées à Médine ?",
+            "answers": [
+                "20 sourates",
+                "28 sourates",
+                "25 sourates",
+                "30 sourates"
+            ],
+            "correct": 1,
+            "difficulty": "Moyen"
+        },
+        {
+            "question": "Quel est le nombre de sourates révélées à la Mecque ?",
+            "answers": [
+                "86 sourates",
+                "90 sourates",
+                "82 sourates",
+                "88 sourates"
+            ],
+            "correct": 0,
+            "difficulty": "Moyen"
+        },
+        {
+            "question": "À quel âge le prophète a-t-il eu la révélation ?",
+            "answers": [
+                "42 ans",
+                "38 ans",
+                "40 ans",
+                "45 ans"
+            ],
+            "correct": 2,
+            "difficulty": "Moyen"
+        },
+        {
+            "question": "À quel âge le prophète est-il décédé ?",
+            "answers": [
+                "65 ans",
+                "63 ans",
+                "60 ans",
+                "67 ans"
+            ],
+            "correct": 1,
+            "difficulty": "Moyen"
+        },
+        {
+            "question": "Quel est le nombre de prophètes cités dans le Coran ?",
+            "answers": [
+                "30 prophètes",
+                "20 prophètes",
+                "25 prophètes",
+                "28 prophètes"
+            ],
+            "correct": 2,
+            "difficulty": "Moyen"
+        },
+        {
+            "question": "Quel est le taux applicable pour la zakat ?",
+            "answers": [
+                "3.5%",
+                "2%",
+                "2.5%",
+                "5%"
+            ],
+            "correct": 2,
+            "difficulty": "Moyen"
+        },
+        {
+            "question": "Quel est le nisab dans la zakat ?",
+            "answers": [
+                "82 grammes d'or",
+                "85 grammes d'or",
+                "80 grammes d'or",
+                "87.48 grammes d'or"
+            ],
+            "correct": 1,
+            "difficulty": "Moyen"
+        },
+        {
+            "question": "Quelle sourate du Coran traite principalement des règles de l'héritage ?",
+            "answers": [
+                "Sourate Al-Baqara",
+                "Sourate An-Nisa",
+                "Sourate Al-Maida",
+                "Sourate Al-Imran"
+            ],
+            "correct": 1,
+            "difficulty": "Moyen"
+        },
+        {
+            "question": "Quelle est la part d'héritage d'un époux si son épouse décédée n'a pas d'enfant ?",
+            "answers": [
+                "Un tiers (1/3)",
+                "Un quart (1/4)",
+                "La moitié (1/2)",
+                "Deux tiers (2/3)"
+            ],
+            "correct": 2,
+            "difficulty": "Difficile"
+        },
+        {
+            "question": "Quelle est la part d'héritage d'un époux si son épouse décédée a des enfants ?",
+            "answers": [
+                "Un tiers (1/3)",
+                "Un quart (1/4)",
+                "La moitié (1/2)",
+                "Un sixième (1/6)"
+            ],
+            "correct": 1,
+            "difficulty": "Difficile"
+        },
+        {
+            "question": "Quelle est la part d'héritage d'une épouse si son mari décédé n'a pas d'enfant ?",
+            "answers": [
+                "Un sixième (1/6)",
+                "Un huitième (1/8)",
+                "Un tiers (1/3)",
+                "Un quart (1/4)"
+            ],
+            "correct": 3,
+            "difficulty": "Difficile"
+        },
+        {
+            "question": "Quelle est la part d'une épouse si son mari décédé a des enfants ?",
+            "answers": [
+                "Un quart (1/4)",
+                "Un sixième (1/6)",
+                "Un huitième (1/8)",
+                "Un tiers (1/3)"
+            ],
+            "correct": 2,
+            "difficulty": "Difficile"
+        },
+        {
+            "question": "Quelle est la part des parents du défunt si celui-ci laisse des enfants ?",
+            "answers": [
+                "Un quart (1/4) chacun",
+                "Un sixième (1/6) chacun",
+                "Un tiers (1/3) chacun",
+                "Un huitième (1/8) chacun"
+            ],
+            "correct": 1,
+            "difficulty": "Difficile"
+        },
+        {
+            "question": "Quelle est la part des parents si le défunt n'a pas d'enfant mais a des frères et sœurs ?",
+            "answers": [
+                "La mère reçoit un sixième (1/6) et le père le reste",
+                "La mère reçoit un quart (1/4) et le père le reste",
+                "La mère reçoit un tiers (1/3) et le père le reste",
+                "Les parents se partagent équitablement"
+            ],
+            "correct": 2,
+            "difficulty": "Difficile"
+        },
+        {
+            "question": "Quel est le statut de l'héritage d'un non-musulman pour un musulman ?",
+            "answers": [
+                "Il peut hériter partiellement",
+                "Il peut hériter avec conditions",
+                "Il ne peut pas hériter",
+                "Il hérite normalement"
+            ],
+            "correct": 2,
+            "difficulty": "Moyen"
+        },
+        {
+            "question": "Si une personne laisse uniquement une mère et aucun autre héritier, combien reçoit-elle ?",
+            "answers": [
+                "Un tiers (1/3)",
+                "La moitié (1/2)",
+                "Toute la succession",
+                "Deux tiers (2/3)"
+            ],
+            "correct": 2,
+            "difficulty": "Difficile"
+        },
+        {
+            "question": "Comment est réparti l'héritage si une personne laisse une mère, un père et des enfants ?",
+            "answers": [
+                "Les parents reçoivent 1/4 chacun et le reste aux enfants",
+                "Les parents reçoivent 1/6 chacun et le reste est partagé entre les enfants",
+                "Les parents reçoivent 1/3 chacun et le reste aux enfants",
+                "Les parents reçoivent 1/8 chacun et le reste aux enfants"
+            ],
+            "correct": 1,
+            "difficulty": "Difficile"
+        },
+        {
+            "question": "Peut-on léguer tous ses biens à une seule personne par testament ?",
+            "answers": [
+                "Oui, sans condition",
+                "Non, maximum un tiers (1/3) sauf accord des héritiers",
+                "Oui, avec l'accord d'un juge",
+                "Non, jamais"
+            ],
+            "correct": 1,
+            "difficulty": "Moyen"
+        },
+        {
+            "question": "Si un défunt laisse un fils, une fille, une épouse et une mère, comment est réparti l'héritage ?",
+            "answers": [
+                "L'épouse 1/6, la mère 1/8, le reste entre fils et fille",
+                "L'épouse 1/8, la mère 1/6, le reste entre fils (2 parts) et fille (1 part)",
+                "L'épouse 1/4, la mère 1/3, le reste entre fils et fille",
+                "L'épouse 1/3, la mère 1/6, le reste entre fils et fille"
+            ],
+            "correct": 1,
+            "difficulty": "Difficile"
+        },
+        {
+            "question": "Si un défunt laisse deux filles et aucun fils, quelle est leur part ?",
+            "answers": [
+                "La moitié de l'héritage",
+                "Un tiers chacune",
+                "Les deux tiers de l'héritage",
+                "Un quart chacune"
+            ],
+            "correct": 2,
+            "difficulty": "Difficile"
+        },
+        {
+            "question": "Dans quel cas la mère hérite d'un tiers de l'héritage ?",
+            "answers": [
+                "Si le défunt a des enfants",
+                "Si le défunt n'a ni enfant ni plusieurs frères et sœurs",
+                "Si le défunt a des frères uniquement",
+                "Si le défunt n'a que des sœurs"
+            ],
+            "correct": 1,
+            "difficulty": "Difficile"
+        },
+        {
+            "question": "Qui est prioritaire entre un frère et un oncle paternel en matière d'héritage ?",
+            "answers": [
+                "L'oncle paternel",
+                "Le frère",
+                "Ils héritent à parts égales",
+                "Cela dépend de leur âge"
+            ],
+            "correct": 1,
+            "difficulty": "Difficile"
+        },
+        {
+            "question": "Si une personne laisse une épouse et un oncle paternel, qui hérite ?",
+            "answers": [
+                "L'épouse prend 1/3 et le reste revient à l'oncle",
+                "L'épouse prend 1/4 et le reste revient à l'oncle paternel",
+                "L'épouse prend 1/8 et le reste revient à l'oncle",
+                "Ils héritent à parts égales"
+            ],
+            "correct": 1,
+            "difficulty": "Difficile"
+        }
+    ]
+}

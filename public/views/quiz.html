@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Islam</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/components/footer.css">
+    <link rel="stylesheet" href="/css/components/header.css">
+    <link rel="stylesheet" href="/css/quiz.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="header-container"></div>
+    
+    <main class="quiz-container">
+        <h1>Quiz sur l'Islam</h1>
+        
+        <div id="error-message" class="error-message"></div>
+
+        <div id="start-screen" class="screen">
+            <h2>Prêt pour le quiz ?</h2>
+            <p>10 questions aléatoires sur l'Islam</p>
+            <div class="quiz-settings">
+                <div class="language-selector">
+                    <label for="language">Langue / Language / اللغة</label>
+                    <select id="language" class="language-select">
+                        <option value="fr">Français</option>
+                        <option value="ar">العربية</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+                <div class="difficulty-selector">
+                    <label for="difficulty">Choisissez la difficulté :</label>
+                    <select id="difficulty" class="difficulty-select">
+                        <option value="Facile">Facile</option>
+                        <option value="Moyen">Moyen</option>
+                        <option value="Difficile">Difficile</option>
+                        <option value="Expert">Expert</option>
+                    </select>
+                </div>
+            </div>
+            <button id="start-btn" class="btn">Commencer le Quiz</button>
+        </div>
+
+        <div id="quiz-screen" class="screen hidden">
+            <div class="progress">
+                <span id="question-number">Question 1/10</span>
+                <div class="progress-bar">
+                    <div id="progress-fill"></div>
+                </div>
+            </div>
+            
+            <div class="question-container">
+                <h2 id="question-text"></h2>
+                <div class="difficulty-badge" id="current-difficulty"></div>
+                <div id="answers" class="answers-grid"></div>
+            </div>
+        </div>
+
+        <div id="result-screen" class="screen hidden">
+            <h2>Résultats</h2>
+            <div class="score-container">
+                <p>Votre score :</p>
+                <p id="final-score">0/10</p>
+                <p id="score-message"></p>
+            </div>
+            <div class="result-buttons">
+                <button id="retry-btn" class="btn">Recommencer ce niveau</button>
+                <button id="next-level-btn" class="btn btn-next" disabled>Niveau suivant</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/nav.js"></script>
+    <script src="/js/header-loader.js"></script>
+    <script src="/js/quiz.js"></script>
+</body>
+</html>

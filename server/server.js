@@ -11,9 +11,16 @@ app.use(express.urlencoded({ extended: true }));
 
 // Servir les fichiers statiques
 app.use(express.static(path.join(__dirname, '../public')));
+app.use('/data', express.static(path.join(__dirname, '../public/data')));
+app.use('/data/translations', express.static(path.join(__dirname, '../public/data/translations')));
 
 // Routes API
 app.use('/api', routes);
+
+// Route pour la page du quiz
+app.get('/quiz', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/views/quiz.html'));
+});
 
 // Route par défaut pour le frontend
 app.get('*', (req, res) => {

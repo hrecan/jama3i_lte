@@ -1,0 +1,40 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "question": "How many pillars are there in Islam?",
+            "answers": [
+                "Five",
+                "Six",
+                "Seven",
+                "Four"
+            ],
+            "correct": 0,
+            "difficulty": "Easy"
+        },
+        {
+            "id": 2,
+            "question": "What is the first pillar of Islam?",
+            "answers": [
+                "The Shahada (testimony of faith)",
+                "Prayer (Salat)",
+                "Fasting (Sawm)",
+                "Zakat"
+            ],
+            "correct": 0,
+            "difficulty": "Easy"
+        },
+        {
+            "id": 3,
+            "question": "Which angel revealed the Quran to Prophet Muhammad ﷺ?",
+            "answers": [
+                "Angel Jibreel (Gabriel)",
+                "Angel Mikael",
+                "Angel Israfil",
+                "Angel Malik"
+            ],
+            "correct": 0,
+            "difficulty": "Easy"
+        }
+    ]
+}
