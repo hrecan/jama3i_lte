@@ -32,13 +32,6 @@
 
         <div class="quran-content">
             <div class="controls">
-                <select id="reciter-select" class="reciter-select">
-                    <option value="">Sélectionner un récitateur</option>
-                </select>
-                <select id="translationSelect" class="translation-select">
-                    <option value="fr">Français</option>
-                    <option value="en">English</option>
-                </select>
                 <div class="audio-controls">
                     <button id="playButton" class="control-button">
                         <i class="fas fa-play"></i>
@@ -46,26 +39,65 @@
                     <button id="stop" class="control-button">
                         <i class="fas fa-stop"></i>
                     </button>
+                    <button id="settingsButton" class="control-button settings-button">
+                        <i class="fas fa-cog"></i>
+                    </button>
                     <div class="volume-control">
                         <i class="fas fa-volume-up"></i>
                         <input type="range" id="volume" min="0" max="100" value="100">
                     </div>
+                </div>
+                <div class="progress-bar">
                     <div class="progress-container">
-                        <div id="progress" class="progress-bar">
-                            <div class="progress"></div>
-                        </div>
-                        <span id="time-display" class="time-display">00:00 / 00:00</span>
+                        <div class="progress"></div>
                     </div>
                 </div>
             </div>
-            
-            <div class="content">
-                <h2 id="currentSurah">Sélectionnez une sourate</h2>
 
+            <!-- Modal des paramètres -->
+            <div id="settingsModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Paramètres</h3>
+                        <button class="close-modal">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="settings-group">
+                            <label for="reciter-select">Récitateur</label>
+                            <select id="reciter-select" class="reciter-select">
+                                <option value="">Sélectionner un récitateur</option>
+                            </select>
+                        </div>
+                        <div class="settings-group">
+                            <label for="translationSelect">Langue</label>
+                            <select id="translationSelect" class="translation-select">
+                                <option value="fr">Français</option>
+                                <option value="en">English</option>
+                            </select>
+                        </div>
+                        <div class="settings-group">
+                            <label for="fontSizeControl">Taille du texte</label>
+                            <div class="font-size-control">
+                                <button id="decreaseFontSize" class="control-button font-size-btn">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <span id="fontSizeDisplay">100%</span>
+                                <button id="increaseFontSize" class="control-button font-size-btn">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="quran-verses">
-                <!-- Le contenu des versets sera généré ici -->
+            <div class="content">
+                <div id="currentSurah">Sélectionnez une sourate</div>
+                <div class="quran-verses">
+                    <!-- Le contenu des versets sera généré ici -->
+                </div>
             </div>
         </div>
        
